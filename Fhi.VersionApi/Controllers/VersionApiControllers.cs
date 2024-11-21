@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+
 using Newtonsoft.Json;
 
-namespace VersionApi.Controllers
+namespace Fhi.VersionApi.Controllers
 {
     [ApiController]
     [Route("api")]
@@ -14,7 +15,6 @@ namespace VersionApi.Controllers
         {
             Information = ReadDictonary();
         }
-
         private static Dictionary<string, VersionDTO> ReadDictonary()
         {
             const string filename = "versionApiFile.json";
@@ -33,7 +33,6 @@ namespace VersionApi.Controllers
             return versionApiDict!;
 
         }
-
         private string CreateKey(string enviroment, string system, string component) => $"{enviroment}.{system}.{component}";
 
 
@@ -48,7 +47,7 @@ namespace VersionApi.Controllers
         {
             var dtoFound = Information.TryGetValue(CreateKey(enviroment, system, component), out var dto);
 
-            return Ok(dtoFound == false 
+            return Ok(dtoFound == false
                 ? new ShieldsIo("Version", $"Not Found ({enviroment}-{system}-{component})")
                 : new ShieldsIo("Version", dto!.Version));
         }
@@ -87,7 +86,7 @@ namespace VersionApi.Controllers
             }
 
             UploadInformation();
-            return Ok(dtoFound?"Updated existing":"Added new");
+            return Ok(dtoFound ? "Updated existing" : "Added new");
         }
 
         [HttpGet("DeleteInformation")]
@@ -133,7 +132,6 @@ namespace VersionApi.Controllers
             };
 
             return File(image, "image/jpeg");
-
         }
 
         /// <summary>
@@ -201,7 +199,7 @@ namespace VersionApi.Controllers
             StatusResponse status;
             try
             {
-                status = JsonConvert.DeserializeObject<StatusResponse>(statusAsString)??new StatusResponse { Status=statusAsString};
+                status = JsonConvert.DeserializeObject<StatusResponse>(statusAsString) ?? new StatusResponse { Status = statusAsString };
             }
             catch (JsonReaderException)
             {
@@ -217,8 +215,5 @@ namespace VersionApi.Controllers
         {
             return JsonConvert.SerializeObject(Information, Formatting.Indented);
         }
-
     }
-
 }
-

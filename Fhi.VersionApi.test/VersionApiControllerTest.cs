@@ -1,7 +1,8 @@
-using VersionApi.Controllers;
+using Fhi.VersionApi.Controllers;
+
 using Microsoft.AspNetCore.Mvc;
 
-namespace VersionApi.test;
+namespace Fhi.VersionApi.test;
 
 public class VersionApiControllerTest
 {
@@ -14,17 +15,16 @@ public class VersionApiControllerTest
     public void Test1()
     {
         var versionapiC = new VersionApiControllers();
-        versionapiC.SetInformation("Disney", "Hund", "Dalmatiner", "1.0.1","healthy");
+        versionapiC.SetInformation("Disney", "Hund", "Dalmatiner", "1.0.1", "healthy");
         var result = versionapiC.GetInformation("Disney", "Hund", "Dalmatiner");
 
         var actualShield = GetActualShield(result);
 
         ShieldsIo expectedShield = new ShieldsIo("Version", "1.0.1");
 
-        Assert.That(actualShield,Is.Not.Null);
+        Assert.That(actualShield, Is.Not.Null);
         Assert.That(actualShield!.label, Is.EqualTo(expectedShield.label));
         Assert.That(actualShield.message, Is.EqualTo(expectedShield.message));
-
     }
 
     //[Test]
@@ -47,5 +47,4 @@ public class VersionApiControllerTest
     private static ShieldsIo? GetActualShield(ActionResult<ShieldsIo> result) => (result.Result as OkObjectResult)!.Value as ShieldsIo;
 
     private static string? GetActualString(ActionResult<string> result) => (result.Result as OkObjectResult)!.Value as string;
-
 }

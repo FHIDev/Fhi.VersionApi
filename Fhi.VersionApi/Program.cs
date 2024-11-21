@@ -1,5 +1,6 @@
-using Microsoft.OpenApi.Models;
 using System.Reflection;
+
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +13,9 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "VersionApi", 
+        Title = "VersionApi",
         Version = "v1",
-        Description="Retrieves status and health information directly in text, json and shields.io format, but can also store and retrive the same information"
+        Description = "Retrieves status and health information directly in text, json and shields.io format, but can also store and retrive the same information"
     });
     // Set the comments path for the Swagger JSON and UI.
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -42,8 +43,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-
 
 public class AzureDevopsAccess
 {

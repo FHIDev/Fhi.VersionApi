@@ -1,4 +1,4 @@
-﻿namespace VersionApi
+﻿namespace Fhi.VersionApi
 {
     /// <summary>
     /// To be used with Badges in Shields.io, ref https://shields.io/endpoint
@@ -17,5 +17,4 @@
             this.message = message;
         }
     }
-
 }
