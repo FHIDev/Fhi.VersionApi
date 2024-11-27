@@ -1,4 +1,4 @@
-﻿namespace VersionApi
+﻿namespace Fhi.VersionApi
 {
     public class StatusResponse
     {

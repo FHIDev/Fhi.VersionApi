@@ -1,4 +1,4 @@
-﻿namespace VersionApi
+﻿namespace Fhi.VersionApi
 {
     public class VersionDTO
     {
@@ -13,6 +13,5 @@
         public string Status { get; set; } = "";
 
         public DateTime Date { get; set; }
-
     }
 }

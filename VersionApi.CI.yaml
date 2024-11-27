@@ -4,7 +4,6 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 
-
 pool:
   vmImage: 'windows-2022'
 
@@ -35,7 +34,3 @@ stages:
 
 # Utfører unittester
     - template: templates/unittests.yaml@FhiGDDevOps
-
-
-
-    

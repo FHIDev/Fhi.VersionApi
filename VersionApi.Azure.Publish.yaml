@@ -13,8 +13,8 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Debug'
-  prosjektnavn : 'VersionApi'
-  prosjektkatalog : 'VersionApi'
+  prosjektnavn : 'Fhi.VersionApi'
+  prosjektkatalog : 'Fhi.VersionApi'
   appname : 'VersionApi-Felles-Fhi'
   
 resources:
@@ -97,6 +97,3 @@ stages:
             #    appName: '$(appname)'
             #    slotName: 'azurefilestore'
             #    package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
-
-
-    
