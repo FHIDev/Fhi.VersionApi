@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using VersionApi.Controllers;
+using Fhi.VersionApi.Controllers;
 
-namespace VersionApi.Test;
+namespace Fhi.VersionApi.Test;
 
 public class CodeVersionTagTest
 {
