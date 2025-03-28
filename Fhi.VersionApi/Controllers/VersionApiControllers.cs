@@ -65,7 +65,7 @@ namespace Fhi.VersionApi.Controllers
         {
             VersionDTO dto = new()
             {
-                Enviroment = environment,
+                Environment = environment,
                 System = system,
                 Component = component,
                 Version = version,
