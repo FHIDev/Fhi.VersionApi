@@ -1,7 +1,8 @@
-mode: Mainline
 branches:
-  master:
-    regex: ^master$|^main$|^develop$
+  develop:
+    regex: ^develop$
+  main:
+    regex: ^main$
 ignore:
   sha: []
 merge-message-formats: {}
