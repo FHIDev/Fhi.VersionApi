@@ -33,7 +33,7 @@ namespace Fhi.VersionApi.Controllers
             return versionApiDict!;
 
         }
-        private string CreateKey(string enviroment, string system, string component) => $"{enviroment}.{system}.{component}";
+        private string CreateKey(string environment, string system, string component) => $"{environment}.{system}.{component}";
 
 
         private void UploadInformation()
@@ -43,20 +43,20 @@ namespace Fhi.VersionApi.Controllers
         }
 
         [HttpGet("GetInformation")]
-        public ActionResult<ShieldsIo> GetInformation(string enviroment, string system, string component)
+        public ActionResult<ShieldsIo> GetInformation(string environment, string system, string component)
         {
-            var dtoFound = Information.TryGetValue(CreateKey(enviroment, system, component), out var dto);
+            var dtoFound = Information.TryGetValue(CreateKey(environment, system, component), out var dto);
 
             return Ok(dtoFound == false
-                ? new ShieldsIo("Version", $"Not Found ({enviroment}-{system}-{component})")
+                ? new ShieldsIo("Version", $"Not Found ({environment}-{system}-{component})")
                 : new ShieldsIo("Version", dto!.Version));
         }
 
         [HttpGet("GetStatus")]
         [Produces("image/jpeg")]
-        public IActionResult GetStatus(string enviroment, string system, string component)
+        public IActionResult GetStatus(string environment, string system, string component)
         {
-            var dtoFound = Information.TryGetValue(CreateKey(enviroment, system, component), out var dto);
+            var dtoFound = Information.TryGetValue(CreateKey(environment, system, component), out var dto);
             return dtoFound ? StatusText(dto!.Status) : StatusText("NotFound");
         }
 
@@ -65,7 +65,7 @@ namespace Fhi.VersionApi.Controllers
         {
             VersionDTO dto = new()
             {
-                Enviroment = environment,
+                Environment = environment,
                 System = system,
                 Component = component,
                 Version = version,

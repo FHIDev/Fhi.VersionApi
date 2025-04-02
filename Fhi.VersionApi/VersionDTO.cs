@@ -2,7 +2,7 @@
 {
     public class VersionDTO
     {
-        public string Enviroment { get; set; } = "";
+        public string Environment { get; set; } = "";
 
         public string System { get; set; } = "";
 
