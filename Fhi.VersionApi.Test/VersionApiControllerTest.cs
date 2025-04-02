@@ -2,7 +2,7 @@ using Fhi.VersionApi.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
 
-namespace Fhi.VersionApi.test;
+namespace Fhi.VersionApi.Test;
 
 public class VersionApiControllerTest
 {
