@@ -86,7 +86,7 @@ stages:
             - task: AzureWebApp@1
               displayName: 'Azure App Service Deploy: website'
               inputs:
-                azureSubscription: 'FHI-Utvikling'
+                azureSubscription: 'FHI-Utvikling-VersionAPI'
                 appName: '$(appname)'
                 slotName: 'production'
                 package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
