@@ -4,9 +4,9 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-branches:
-  include:
-    - main
+  branches:
+    include:
+      - main
 
 pool:
   vmImage: 'windows-2022'
