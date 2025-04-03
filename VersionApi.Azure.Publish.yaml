@@ -43,7 +43,7 @@ stages:
     - template: templates/restoreandbuild6gv.yaml@FhiGDDevOps
 
 
-# Utf�rer unittester
+# Utfører unittester
     - template: templates/unittests.yaml@FhiGDDevOps
 
     - task: DotNetCoreCLI@2
