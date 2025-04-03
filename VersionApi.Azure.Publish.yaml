@@ -4,7 +4,9 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- main
+  branches:
+    include:
+      - main
 
 pool:
   vmImage: 'windows-2022'
@@ -41,7 +43,7 @@ stages:
     - template: templates/restoreandbuild6gv.yaml@FhiGDDevOps
 
 
-# Utfører unittester
+# UtfÃ¸rer unittester
     - template: templates/unittests.yaml@FhiGDDevOps
 
     - task: DotNetCoreCLI@2
