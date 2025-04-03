@@ -16,7 +16,7 @@
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="WrapThat.Version" Version="1.3.0" />
+    <PackageReference Include="WrapThat.Version" Version="1.4.2" />
   </ItemGroup>
   <ItemGroup>
     <None Update="images\blackdot3D.png">
